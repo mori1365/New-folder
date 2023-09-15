@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDiv {
+  cursor: pointer;
+  background-color: #babecc;
+  width: 200px;
+  height: 200px;
+}
+    </style>
+</head>
+<body>
+    <div id="myDiv"></div>
+    <script>
+var myDiv = document.getElementById('myDiv');
+
+myDiv.addEventListener('click', function() {
+  // تعیین مسیر عکس مورد نظر
+  var imageURL = 'https://img7.ir/images/56877547655015565977.png';
+  
+  // ایجاد یک عنصر تصویر (img)
+  var image = document.createElement('img');
+  image.src = imageURL;
+  image.style.position = 'fixed';
+  image.style.top = '0';
+  image.style.left = '0';
+  image.style.width = '100%';
+  image.style.height = '100%';
+  image.style.objectFit = 'contain';
+  image.style.zIndex = '9999';
+  
+  // اضافه کردن عنصر تصویر به بدنه صفحه (body)
+  document.body.appendChild(image);
+  
+  // حذف عنصر تصویر پس از کلیک مجدد
+  image.addEventListener('click', function() {
+    document.body.removeChild(image);
+  });
+});
+    </script>
+</body>
+</html>

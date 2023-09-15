@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            direction: rtl;
+            font-family: tahoma;
+        }
+        #top-navigation {
+            background-color:#000;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+        .close,
+        #menu{
+            cursor: pointer;
+            color: #db1313;
+            display: none;
+        }
+        #top-navigation >ul >li {
+            display: inline-block;
+        }
+        #top-navigation li {
+            position: relative;
+        }
+        #top-navigation >ul >li> a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 50px;
+            padding: 0 10px;
+            font-size: 14px;
+            font-family:'vazir' ;
+        }
+        #top-navigation >ul >li:hover >a {
+            background-color: gray;
+        }
+        
+        #top-navigation .sub-menu {
+            list-style: none;
+            border: 1px solid gainsboro;
+            display: none;
+            position: absolute;
+			top:60%;
+			width:120px;
+        }
+        
+        #top-navigation .sub-menu >li >a {
+            display: block;
+            width: 120px;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 40px;
+            padding: 0 10px;
+            color: black;
+            background-color: white;
+			text-align:center;
+        }
+        #top-navigation .sub-menu >li:hover >a {
+            background-color: #e7e7e7;
+        }
+        #top-navigation li:hover >.sub-menu {
+            display: block;
+        }
+        #top-navigation .sub-menu >li > .sub-menu {
+            left: -132px;
+            top: -20px;
+        }
+        @media (max-width:600px){
+            #menu{
+                display: block;
+            }
+            #top-navigation ul{
+                display: none;
+
+            }
+            #top-navigation .sub-menu{
+                right: 70px;
+                top:-10%;
+            }
+            #top-navigation .sub-menu >li > .sub-menu{
+                right: 140px;
+                top:-10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div onclick="closebar()" class="close">&#10006;</div>
+    <div id="top-navigation">
+        
+              <ul class="navbar">
+        <li>
+            <a href="#">خانه</a>
+        </li>
+        <li>
+            <a href="#">باشگاهی</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">   </a> 
+                </li>
+                <li>
+                    <a href="#">  مقالات فن آوری</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#">   برنامه نویسی</a> 
+                        </li>
+                        <li>
+                            <a href="#">  شبکه و امنیت  </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#">   برنامه نویسی</a> 
+                                </li>
+                                <li>
+                                    <a href="#">  شبکه و امنیت  </a> 
+                                </li>
+                                <li>
+                                    <a href="#">   طراحی وب</a> 
+                                </li>
+                                <li>
+                                    <a href="#">   بانکهای اطلاعاتی</a> 
+                                </li>
+                            </ul> 
+                        </li>
+                        <li>
+                            <a href="#">   طراحی وب</a> 
+                        </li>
+                        <li>
+                            <a href="#">   بانکهای اطلاعاتی</a> 
+                        </li>
+                    </ul> 
+                </li>
+                <li>
+                    <a href="#">  مقالات ورزشی</a> 
+                </li>
+                <li>
+                    <a href="#">  مقالات پزشکی</a> 
+                </li>
+                
+            </ul>
+        </li>
+        <li>
+            <a href="#"> محصولات</a>
+        </li>
+        <li>
+            <a href="#"> درباره ما</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">   برنامه نویسی</a> 
+                </li>
+                <li>
+                    <a href="#">  شبکه و امنیت  </a> 
+                </li>
+                <li>
+                    <a href="#">   طراحی وب</a> 
+                </li>
+                <li>
+                    <a href="#">   بانکهای اطلاعاتی</a> 
+                </li>
+            </ul> 
+        </li>
+        <li>
+            <a href="#"> ارتباط با ما </a>
+        </li>
+
+      </ul>
+      
+    </div>
+    <div onclick="openbar()" id="menu">&#9776;</div>
+    <script>
+        function openbar(){
+            document.querySelector(".navbar").style.display = "block";
+            document.getElementById("menu").style.dispaly = "none";
+            document.querySelector(".close").style.display = "block";
+        }
+        function closebar(){
+            document.querySelector(".navbar").style.display = "none";
+            document.getElementById("menu").style.display = "block";
+            document.querySelector(".close").style.display = "none";
+        }
+    </script>
+</body>
+</html>
